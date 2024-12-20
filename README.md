@@ -48,11 +48,9 @@
 ### Task: Improving NotFound Component 
 
 - Enhance the user experience of a NotFound component by applying React-Bootstrap features including colors for text, a grid layout for better structure, an engaging image to soften the error message, and clearer navigation options using React-Bootstrap's NavLink component.
-
-#### Integrate React-Bootstrap:
-
-- Ensure React-Bootstrap is installed in your project (npm install react-bootstrap bootstrap).
-- Import necessary components (Container, Row, Col, Image, Button) from React-Bootstrap.
+- **Integrate React-Bootstrap**:
+    - Ensure React-Bootstrap is installed in your project (npm install react-bootstrap bootstrap).
+    - Import necessary components (Container, Row, Col, Image, Button) from React-Bootstrap.
 - **Apply a Color Scheme**:
     - Use React-Bootstrap utilities to apply a color scheme that matches your app's design. Focus on text colors and backgrounds to make the NotFound page visually appealing.
 - **Structure Content with Grid**:
