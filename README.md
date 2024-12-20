@@ -53,22 +53,14 @@
 
 - Ensure React-Bootstrap is installed in your project (npm install react-bootstrap bootstrap).
 - Import necessary components (Container, Row, Col, Image, Button) from React-Bootstrap.
-
-#### Apply a Color Scheme:
-
-- Use React-Bootstrap utilities to apply a color scheme that matches your app's design. Focus on text colors and backgrounds to make the NotFound page visually appealing.
-
-#### Structure Content with Grid:
-
-- Use the Container, Row, and Col components to structure the message and image within a grid layout, ensuring content is well-organized and responsive.
-
-### Add an Engaging Image:
-
-- Include a friendly or humorous image related to navigation errors. This image should be responsive and fit well within the grid layout.
-
-#### Enhance Navigation with NavLink:
-
-- Replace the <Link> component with React-Bootstrap's NavLink for better styling and integration. Ensure the navigation back to the homepage is clear and inviting.
+- **Apply a Color Scheme**:
+    - Use React-Bootstrap utilities to apply a color scheme that matches your app's design. Focus on text colors and backgrounds to make the NotFound page visually appealing.
+- **Structure Content with Grid**:
+    - Use the Container, Row, and Col components to structure the message and image within a grid layout, ensuring content is well-organized and responsive.
+-  **Add an Engaging Image**:
+    - Include a friendly or humorous image related to navigation errors. This image should be responsive and fit well within the grid layout.
+- **Enhance Navigation with NavLink**:
+    - Replace the <Link> component with React-Bootstrap's NavLink for better styling and integration. Ensure the navigation back to the homepage is clear and inviting.
 
 **Expected Outcome**:
 
