@@ -1,11 +1,17 @@
+import { Button, Alert, Container, Modal, ListGroup, ListGroupItem, Image, Card } from 'react-bootstrap';
 
 function Home(){
     return(
-        <div className="container rounded bg-light m-5 p-5 text-center">
-            <h1>Welcome to the Comic Book Library!</h1>
-            <p>Here you will be able to find and browse all Marvel comic book characters and the comic books they are featured in. </p>
-            <img src="/images/home-page.jpg" alt="Banner Image of Someone Browsing Comic Books" className="img-fluid" ></img>
-        </div>
+        <Container>
+            <Card  className="bg-dark text-white rounded m-5 text-center shadow-sm">
+                <Card.Title className="m-2"><h1>Welcome to the Comic Book Library!</h1></Card.Title>
+                <Card.Text className="m-2">
+                Dive into the Marvel universe, where you can explore iconic characters and discover the comic books that bring their stories to life. Search, browse, and immerse yourself in the adventures of your favorite heroes and villains.
+                </Card.Text>
+                <Card.Img variant="bottom" src="/images/home-page.jpg" alt="Banner Image of Someone Browsing Comic Books"/>
+                <Button className="m-2" variant="primary">Shop Now</Button>
+            </Card>
+        </Container>   
     )
 }
 

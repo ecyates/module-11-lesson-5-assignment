@@ -1,22 +1,10 @@
-
-// // src/components/Comics.jsx
-// const Comics = () => {
-//     return (
-//         <div>
-//             <h2>Comics</h2>
-//             <p>This component is under construction. Check back later!</p>
-//         </div>
-//     );
-// };
-
-// export default Comics;
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apiKey, hash } from './ApiPasswords';
 import { useNavigate } from 'react-router-dom';
+import { Card, Container, Image, Pagination, Row, Col } from 'react-bootstrap';
 
-const Comics = () => {
+const ComicList = () => {
     // Instantiate the list of comics and the 'offset' which refers to where the list of comics will begin
     const [comics,setComics] = useState([]);
     const [offset, setOffset] = useState(0);
@@ -51,41 +39,43 @@ const Comics = () => {
     };    
 
     return (
-        <div id="comic-list">
-            <h1 className="text-center bg-dark text-light p-3">Marvel Comics</h1>
+        <Container fluid className="my-3">
+            <h1 className="text-center bg-primary text-light p-3 rounded">Marvel Comics</h1>
             {/* Using cards in Bootstrap, we're adding the thumbnail and name from the API for each comic */}
-            <div className="row g-4">
+            <Row>
                 {comics.length>0 ?
                     (comics.map(comic => (
-                            <a className="col-md-4 mb-3" key={comic.id} href={'#comic-detail'}  onClick={() => navigate(`/comics/${comic.id}`)}>
-                                        <div className="card cardHover">
-                                            <center><img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} style={{height:300}} className={"card-img-top rounded"} alt={`${comic.name} Image`}/></center>
-                                            <div className="card-body">
-                                                <h5 className="card-title text-center">{comic.title}</h5>
-                                            </div>
-                                        </div>
+                        <Col xs="4">
+                            <a key={comic.id} href={'#comic-detail'}  onClick={() => navigate(`/comics/${comic.id}`)}>
+                            <Card className="m-3 text-center bg-secondary text-white cardHover">
+                                <Image src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} style={{height:300}} alt={`${comic.title} Image`}/>
+                                <Card.Title>
+                                    {comic.title}
+                                </Card.Title>
+                            </Card>
                             </a>
+                        </Col>
                     ))) : 
-                    <p> Loading comics....</p>
+                    <h1> Loading comics....</h1>
                 }
+            </Row>
                 {/* Once loaded, the Next/Previous navigation buttons will also appear */}
-                </div>
                 {comics.length >0 ?
                     <div className="d-flex bg-dark justify-content-center mt-4 pt-3">
-                        <ul className="pagination">
+                        <Pagination>
                             {offset==0 ? 
-                                (<li className={'page-item disabled bg-dark'}><a href="#comic-list" className={'page-link'}>Previous</a></li>) : 
-                                (<li className={'page-item bg-dark'}><a className={'page-link'} onClick={() => previousOffset()}>Previous</a></li>)
+                                (<Pagination.Item className="btn btn-primary m-3" xs="lg"disabled>Previous</Pagination.Item>) : 
+                                (<Pagination.Item className="btn btn-primary m-3" xs="lg" onClick={() => previousOffset()}>Previous</Pagination.Item>)
                             }
                             {offset>=1544 ? 
-                                (<li className={'page-item disabled bg-dark'}><a className={'page-link'}>Next</a></li>) : 
-                                (<li className={'page-item bg-dark'}><a href="#comic-list" className={'page-link'} onClick={() => nextOffset()}>Next</a></li>)
+                                (<Pagination.Item className="btn btn-primary m-3" xs="lg"disabled>Next</Pagination.Item>) : 
+                                (<Pagination.Item className="btn btn-primary m-3" xs="lg"onClick={() => nextOffset()}>Next</Pagination.Item>)
                             }
-                        </ul>
+                        </Pagination>
                     </div>
                 : null}
-        </div>
+        </Container>
     );
 }
 
-export default Comics;
+export default ComicList;
