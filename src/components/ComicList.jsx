@@ -45,8 +45,8 @@ const ComicList = () => {
             <Row>
                 {comics.length>0 ?
                     (comics.map(comic => (
-                        <Col xs="4">
-                            <a key={comic.id} href={'#comic-detail'}  onClick={() => navigate(`/comics/${comic.id}`)}>
+                        <Col xs="4" key={comic.id}>
+                            <a  href={'#comic-detail'}  onClick={() => navigate(`/comics/${comic.id}`)}>
                             <Card className="m-3 text-center bg-secondary text-white cardHover">
                                 <Image src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} style={{height:300}} alt={`${comic.title} Image`}/>
                                 <Card.Title>

@@ -46,8 +46,8 @@ const CharacterList = () => {
             <Row>
                 {characters.length>0 ?
                     (characters.map(character => (
-                        <Col xs="4">
-                            <a key={character.id} href={'#character-detail'}  onClick={() => navigate(`/characters/${character.id}`)}>
+                        <Col xs="4" key={character.id}>
+                            <a  href={'#character-detail'}  onClick={() => navigate(`/characters/${character.id}`)}>
                             <Card className="m-3 text-center bg-secondary text-white cardHover">
                                 <Image src={`${character.thumbnail.path}.${character.thumbnail.extension}`} style={{height:300}} alt={`${character.name} Image`}/>
                                 <Card.Title>

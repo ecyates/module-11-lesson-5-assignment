@@ -28,7 +28,8 @@ const CharacterDetail = () => {
                 setCharacterDeets(character);
     
                 // Fetch comics if collectionURI exists and set them
-                const apiURL = character?.comics?.collectionURI || null;
+                const apiURL = ("https"+(character?.comics?.collectionURI).slice(4)) || null;
+                console.log(apiURL);
                 if (apiURL) {
                     const comicResponse = await axios.get(
                         `${apiURL}?ts=1&offset=${offset}&apikey=${apiKey}&hash=${hash}`
